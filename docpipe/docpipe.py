@@ -1,5 +1,4 @@
 import subprocess
-import fire
 import tempfile
 from os import chdir, path
 import pkg_resources
@@ -38,6 +37,19 @@ class DocPipe(object):
             saveLocation = out_dir_path
             copy(filename, saveLocation)
 
+    def pdf_help(self):
+        """Get Help for PDF files"""
+        msg = """Make PDF file using markdown and the included latex template
+        
+        Args:
+            markdown_file: the file that has your written material.
+            bibliography: the bibtex formatted file for biblography.
+            output_name: the name prefix for the outputted file
+            output_directory: the directory where the pdf is saved
+        
+        Notes:
+            The markdown file should use \citet or \citep for  embedded citations
+        """
 
 def copy(srcFile, dest):
     subprocess.run(["cp",srcFile, dest], check=True)
@@ -92,5 +104,4 @@ def selectSaveLocation() -> str:
         return path.expanduser("~/Downloads")
 
 
-if __name__ == "__main__":
-    fire.Fire(DocPipe)
+
