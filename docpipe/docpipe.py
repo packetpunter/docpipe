@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-from pypandoc import convert_text
 import subprocess
 import fire
 import tempfile
@@ -39,7 +38,7 @@ def copy(srcFile, dest):
 
 def _generate_pdf(markdown_file, bibtex_file, output_filename):
     """
-    Generates PDF files from Markdown text, BibTeX, and CSL files using pypandoc.
+    Generates PDF files from Markdown text, BibTeX, and CSL files using pandoc and latex packages.
 
     Args:
         markdown_text (str): The Markdown text content.
@@ -86,10 +85,6 @@ def selectSaveLocation() -> str:
     else:
         return path.expanduser("~/Downloads")
 
-def choose_file():
-    root = tk.Tk()
-    root.withdraw()
-    return filedialog.askopenfilename()
 
 if __name__ == "__main__":
     fire.Fire(DocPipe)

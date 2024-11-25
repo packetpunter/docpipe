@@ -11,7 +11,6 @@ setup(
     },
     install_requires=[
         'fire',
-        'pypandoc',
         'termcolor',
         'setuptools'
     ],
