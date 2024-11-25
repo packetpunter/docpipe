@@ -1,0 +1,4 @@
+fire==0.7.0
+pypandoc==1.14
+setuptools==75.6.0
+termcolor==2.5.0

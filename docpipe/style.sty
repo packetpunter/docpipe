@@ -1,0 +1,43 @@
+\usepackage[margin=.5in,bottom=1in,top=1in]{geometry} % narrow sides, tall top/bottom
+\geometry{a4paper,portrait}
+
+%% LaTeX Preamble - Common packages
+\usepackage[utf8]{inputenc} % Any characters can be typed directly from the keyboard, eg éçñ
+\usepackage[pdftex,bookmarks,colorlinks,breaklinks]{hyperref}  % PDF hyperlinks, with coloured links
+\usepackage[svgnames]{xcolor}
+\definecolor{dullmagenta}{rgb}{0.4,0,0.4}   % #660066
+\definecolor{darkblue}{rgb}{0,0,0.4}
+\hypersetup{linkcolor=FireBrick,citecolor=blue,filecolor=dullmagenta,urlcolor=darkblue} % coloured links
+\usepackage{pdfsync}  % enable tex source and pdf output syncronicity
+
+\usepackage{natbib}
+
+\usepackage{url}
+\urlstyle{same}
+
+%% LaTeX Preamble - Font choices
+% Palatino for rm and math | Helvetica for ss | Courier for tt
+\usepackage{mathpazo} % math & rm
+\linespread{1.05}        % Palatino needs more leading (space between lines)
+\usepackage[scaled]{helvet} % ss
+\usepackage{courier} % 
+\normalfont
+\usepackage[T1]{fontenc}
+%% END Font choices
+
+%% Preamble - outlines
+\usepackage{outlines}
+
+%% End Preamble - outlines
+
+%% Preamble - functions
+
+\newcommand{\bigemph}[1]{{\fontsize{14.4pt}{17.28pt}\selectfont\bfseries\itshape #1}}
+
+%% END preable - funcs
+
+\usepackage{mdframed}
+\newcommand\kw[1]{\textbf{\itshape #1}}
+
+\pagecolor{AliceBlue}
+
