@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import subprocess
 import fire
 import tempfile
@@ -13,6 +11,14 @@ class DocPipe(object):
     """a class to do document conversions"""
 
     def pdf(self, markdown_file, bibliography, output_name, output_directory):
+        """Make PDF file using markdown and the included latex template
+        
+        Args:
+            markdown_file: the file that has your written material.
+            bibliography: the bibtex formatted file for biblography.
+            output_name: the name prefix for the outputted file
+            output_directory: the directory where the pdf is saved
+        """
         full_md_path = pathlib.Path(markdown_file).resolve()
         full_bib_path = pathlib.Path(bibliography).resolve()
         if not output_directory:
@@ -53,7 +59,7 @@ def _generate_pdf(markdown_file, bibtex_file, output_filename):
             markdown_file,
             "--include-in-header", "style.sty",
             "--bibliography", bibtex_file, 
-            "--natbib",  # Or --biblatex if you prefer
+            "--natbib",
         ], check=True)
 
         subprocess.run([
